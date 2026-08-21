@@ -9,25 +9,22 @@
 
 <meta name="description" content="Gray Surgical and Physiotherapy Equipments supplies high-quality surgical instruments, physiotherapy equipment, rehabilitation products, braces, corsets, and medical supplies in Nigeria.">
 <meta name="author" content="Gray Surgical and Physiotherapy Equipments">
-<meta name="theme-color" content="#0f766e">
+<meta name="theme-color" content="#060b14">
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://shadrach1-cpu.github.io/gray-surgical-website/">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Gray Surgical and Physiotherapy Equipments">
 <meta property="og:description" content="Trusted supplier of surgical and physiotherapy equipment in Nigeria.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shadrach1-cpu.github.io/gray-surgical-website/">
 <meta property="og:image" content="https://i.postimg.cc/hj5wwBg5/real-logo.jpg">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gray Surgical and Physiotherapy Equipments">
 <meta name="twitter:description" content="Medical and rehabilitation equipment supplier in Nigeria.">
 <meta name="twitter:image" content="https://i.postimg.cc/hj5wwBg5/real-logo.jpg">
 
-<!-- Favicon -->
 <link rel="icon" type="image/jpeg" href="https://i.postimg.cc/hj5wwBg5/real-logo.jpg">
 
 <script type="application/ld+json">
@@ -39,352 +36,623 @@
   "telephone":"+2349054247463",
   "email":"wichukwuebuka96@gmail.com",
   "description":"Supplier of surgical equipment and physiotherapy products in Nigeria.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "Nigeria"
-  }
+  "address": { "@type": "PostalAddress", "addressCountry": "Nigeria" }
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --bg: #f4f7fb;
-    --surface: rgba(255, 255, 255, 0.82);
-    --surface-strong: #ffffff;
-    --text: #0f172a;
-    --muted: #475569;
-    --primary: #0f766e;
-    --primary-2: #14b8a6;
-    --accent: #2563eb;
-    --border: rgba(15, 23, 42, 0.08);
-    --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
-    --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
-    --radius: 22px;
+    --bg: #050a12;
+    --bg-2: #0a1420;
+    --panel: rgba(255, 255, 255, 0.035);
+    --panel-strong: rgba(255, 255, 255, 0.06);
+    --border: rgba(122, 214, 235, 0.22);
+    --border-strong: rgba(122, 214, 235, 0.45);
+    --cyan: #35d7f0;
+    --cyan-soft: rgba(53, 215, 240, 0.14);
+    --violet: #8a7bff;
+    --vital: #38f2a8;
+    --text: #e7f2f6;
+    --muted: #93a8b6;
+    --radius: 14px;
+    --display: 'Space Grotesk', 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Inter', Arial, Helvetica, sans-serif;
   }
 
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-  html {
-    scroll-behavior: smooth;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   }
 
   body {
     margin: 0;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    background:
-      radial-gradient(circle at top left, rgba(20, 184, 166, 0.12), transparent 28%),
-      radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 26%),
-      linear-gradient(180deg, #eef6fb 0%, #f8fbfd 45%, #f4f7fb 100%);
+    font-family: var(--sans);
     color: var(--text);
     line-height: 1.6;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(53, 215, 240, 0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(138, 123, 255, 0.08), transparent 55%),
+      var(--bg);
   }
 
-  a {
-    color: inherit;
-  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
 
-  .container {
-    width: min(1180px, calc(100% - 32px));
-    margin: 0 auto;
-  }
+  .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
-  header {
+  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+  ::selection { background: var(--cyan-soft); color: var(--cyan); }
+
+  /* ---------- scanframe utility: HUD corner brackets ---------- */
+
+  .scanframe {
     position: relative;
-    padding: 28px 0 18px;
-  }
-
-  .hero {
-    overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 30px;
-    background: linear-gradient(135deg, rgba(15,118,110,0.96), rgba(37,99,235,0.92));
-    color: white;
-    box-shadow: var(--shadow);
-  }
-
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 28px;
-    align-items: center;
-    padding: 34px;
-  }
-
-  .brand-logo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 28px;
-    background: white;
-    padding: 10px;
-    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
-  }
-
-  .brand h1 {
-    margin: 0;
-    font-size: clamp(1.7rem, 3.5vw, 3rem);
-    line-height: 1.1;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-
-  .brand p {
-    margin: 14px 0 0;
-    max-width: 760px;
-    font-size: 1.02rem;
-    color: rgba(255,255,255,0.90);
-  }
-
-  .nav-wrap {
-    margin-top: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  nav a {
-    text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.16);
-    color: white;
-    font-weight: 600;
-    transition: 0.3s ease;
+    background: var(--panel);
+    border-radius: var(--radius);
     backdrop-filter: blur(10px);
   }
 
-  nav a:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.24);
-  }
-
-  main {
-    padding: 10px 0 60px;
-  }
-
-  section {
-    margin-top: 26px;
-    padding: 28px;
-    border-radius: var(--radius);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-soft);
-    backdrop-filter: blur(14px);
-  }
-
-  section h2 {
-    margin: 0 0 18px;
-    font-size: 1.5rem;
-    color: var(--text);
-    position: relative;
-    padding-bottom: 12px;
-  }
-
-  section h2::after {
+  .scanframe::before,
+  .scanframe::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 72px;
-    height: 4px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--primary), var(--primary-2), var(--accent));
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
   }
 
-  p {
-    margin: 0 0 12px;
+  .scanframe::before {
+    top: -1px; left: -1px;
+    border-top: 2px solid var(--cyan);
+    border-left: 2px solid var(--cyan);
+    border-radius: 6px 0 0 0;
+  }
+
+  .scanframe::after {
+    bottom: -1px; right: -1px;
+    border-bottom: 2px solid var(--cyan);
+    border-right: 2px solid var(--cyan);
+    border-radius: 0 0 6px 0;
+  }
+
+  /* ---------- Status bar ---------- */
+
+  .statusbar {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .statusbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--vital);
+    box-shadow: 0 0 8px var(--vital);
+    margin-right: 7px;
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  /* ---------- Header ---------- */
+
+  header.hero-header { padding: 26px 0 0; }
+
+  .brand-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 8px 0 24px;
+  }
+
+  .brand-logo {
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    box-shadow: 0 0 0 5px rgba(53, 215, 240, 0.06), 0 0 24px rgba(53, 215, 240, 0.18);
+    background: #fff;
+  }
+
+  .brand-name {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-sub {
+    margin: 6px 0 0;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 22px;
+    overflow-x: auto;
+  }
+
+  nav.tabs a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    padding: 9px 18px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  nav.tabs a:hover,
+  nav.tabs a:focus-visible {
+    color: var(--cyan);
+    border-color: var(--border-strong);
+    background: var(--cyan-soft);
+    box-shadow: 0 0 16px rgba(53, 215, 240, 0.15);
+  }
+
+  /* ---------- Hero ---------- */
+
+  .hero-statement { padding: 10px 0 12px; }
+
+  .hero-panel { padding: 0; overflow: hidden; }
+
+  .hero-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 26px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-body {
+    padding: 36px 30px 30px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 34px;
+    align-items: center;
+  }
+
+  .hero-body h2 {
+    margin: 0 0 16px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 3.6vw, 2.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-body h2 .glow {
+    color: var(--cyan);
+    text-shadow: 0 0 22px rgba(53, 215, 240, 0.45);
+  }
+
+  .hero-body p.lede {
+    max-width: 50ch;
+    color: var(--muted);
+    font-size: 1.02rem;
+  }
+
+  .cta-row { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    transition: all 0.2s ease;
+  }
+
+  .btn-solid {
+    background: linear-gradient(135deg, var(--cyan), var(--violet));
+    color: #04141b;
+    border-color: transparent;
+  }
+
+  .btn-solid:hover { box-shadow: 0 0 26px rgba(53, 215, 240, 0.4); transform: translateY(-1px); }
+
+  .btn-outline { background: transparent; color: var(--text); }
+  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* ECG signature strip */
+
+  .ecg-wrap {
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+    overflow: hidden;
+    padding: 4px 0;
+  }
+
+  .ecg-wrap svg { display: block; width: 200%; height: 90px; }
+
+  .ecg-line {
+    stroke: var(--vital);
+    stroke-width: 2;
+    fill: none;
+    filter: drop-shadow(0 0 6px rgba(56, 242, 168, 0.65));
+  }
+
+  .ecg-track { animation: ecg-scroll 6s linear infinite; }
+
+  @keyframes ecg-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .ecg-caption {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 18px 4px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
     color: var(--muted);
   }
+
+  .ecg-caption b { color: var(--vital); }
+
+  /* ---------- Sections ---------- */
+
+  main { padding: 10px 0 60px; }
+  section { margin-top: 48px; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .section-head .tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    border: 1px solid var(--border-strong);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .section-head .rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-strong), transparent);
+  }
+
+  /* ---------- About ---------- */
 
   .intro-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-top: 18px;
   }
 
-  .info-card {
-    background: var(--surface-strong);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 18px;
-    box-shadow: 0 10px 20px rgba(15,23,42,0.05);
+  .info-card { padding: 22px 22px 20px; }
+
+  .info-card .k {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    display: block;
+    margin-bottom: 10px;
   }
 
   .info-card strong {
     display: block;
-    color: var(--primary);
-    margin-bottom: 6px;
-    font-size: 1rem;
+    font-family: var(--display);
+    font-size: 1.05rem;
+    margin-bottom: 8px;
   }
+
+  .info-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+
+  /* ---------- Product grid ---------- */
 
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 18px;
   }
 
-  figure {
-    margin: 0;
-    background: var(--surface-strong);
-    border-radius: 22px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 12px 24px rgba(15,23,42,0.08);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  .ticket { padding: 0; overflow: hidden; transition: border-color 0.2s ease, transform 0.2s ease; }
+
+  .ticket:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-4px);
   }
 
-  figure:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 36px rgba(15,23,42,0.12);
-  }
+  .ticket-media { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
 
-  figure img {
+  .ticket-media img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    display: block;
-    background: #eef2f7;
+    filter: saturate(0.92) brightness(0.94);
   }
 
-  figcaption {
-    padding: 16px;
+  .ticket-media .id-chip {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    background: rgba(5, 10, 18, 0.72);
+    border: 1px solid var(--border-strong);
+    color: var(--cyan);
+    padding: 3px 8px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
   }
 
-  figcaption b {
-    display: block;
-    margin-bottom: 8px;
+  .ticket-media .status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    color: var(--vital);
+    background: rgba(5, 10, 18, 0.72);
+    border: 1px solid rgba(56, 242, 168, 0.35);
+    padding: 3px 8px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+
+  .ticket-copy { padding: 16px 18px 18px; }
+
+  .ticket-copy b {
+    font-family: var(--display);
+    font-weight: 600;
     font-size: 1.02rem;
-    color: var(--text);
+    display: block;
+    margin-bottom: 6px;
   }
 
-  figcaption p {
-    margin: 0 0 12px;
-    font-size: 0.96rem;
-  }
+  .ticket-copy p { margin: 0 0 14px; font-size: 0.9rem; color: var(--muted); }
 
   .price {
-    display: inline-block;
-    padding: 9px 12px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, rgba(15,118,110,0.10), rgba(37,99,235,0.10));
-    color: var(--primary);
-    font-weight: 700;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: var(--mono);
+    font-weight: 600;
     font-size: 0.92rem;
+    color: var(--cyan);
+    border-top: 1px dashed var(--border);
+    padding-top: 12px;
+    width: 100%;
   }
 
-  .contact-box {
+  .price small { color: var(--muted); font-weight: 400; }
+
+  /* ---------- Services ---------- */
+
+  .services-body {
+    padding: 28px 30px;
     display: grid;
-    gap: 14px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 
-  .contact-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 14px;
-    margin-top: 8px;
+  .services-body p { color: var(--muted); margin: 0; }
+
+  .services-list { list-style: none; margin: 0; padding: 0; font-family: var(--mono); font-size: 0.86rem; }
+
+  .services-list li {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
   }
+
+  .services-list li:last-child { border-bottom: none; }
+  .services-list li::before { content: "▸"; color: var(--cyan); }
+
+  /* ---------- Contact ---------- */
+
+  .contact-box { padding: 0; }
+
+  .contact-box > p { margin: 0; padding: 22px 26px; border-bottom: 1px solid var(--border); color: var(--muted); }
+
+  .contact-links { display: grid; grid-template-columns: repeat(3, 1fr); }
 
   .contact-links a {
     text-decoration: none;
-    padding: 14px 16px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(15,118,110,0.08), rgba(37,99,235,0.08));
-    border: 1px solid var(--border);
+    padding: 24px 22px;
+    font-family: var(--mono);
+    font-size: 0.86rem;
     font-weight: 600;
     color: var(--text);
-    transition: 0.3s ease;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  .contact-links a:hover {
-    transform: translateY(-3px);
-    border-color: rgba(20,184,166,0.35);
+  .contact-links a span.label {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    font-weight: 500;
   }
+
+  .contact-links a:last-child { border-right: none; }
+
+  .contact-links a:hover,
+  .contact-links a:focus-visible { background: var(--cyan-soft); }
+
+  /* ---------- Footer ---------- */
 
   footer {
-    padding: 24px 0 36px;
+    padding: 32px 0 42px;
     text-align: center;
+    font-family: var(--mono);
+    font-size: 0.75rem;
     color: var(--muted);
   }
 
+  footer hr { border: none; border-top: 1px solid var(--border); margin: 0 auto 18px; width: min(400px, 80%); }
+  footer a { color: var(--cyan); font-weight: 600; text-decoration: underline; }
+
+  /* ---------- Responsive ---------- */
+
   @media (max-width: 900px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .brand-logo {
-      margin: 0 auto;
-    }
-
-    .nav-wrap {
-      justify-content: center;
-    }
-
-    .intro-grid {
-      grid-template-columns: 1fr;
-    }
+    .hero-body { grid-template-columns: 1fr; }
+    .intro-grid { grid-template-columns: 1fr; }
+    .services-body { grid-template-columns: 1fr; }
+    .contact-links { grid-template-columns: 1fr; }
+    .contact-links a { border-right: none; border-bottom: 1px solid var(--border); }
+    .contact-links a:last-child { border-bottom: none; }
   }
 
   @media (max-width: 560px) {
-    .container {
-      width: min(100% - 20px, 1180px);
-    }
-
-    section,
-    .hero-inner {
-      padding: 20px;
-    }
-
-    nav a {
-      width: 100%;
-      text-align: center;
-    }
+    .brand-row { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .hero-body, .services-body { padding: 26px 20px; }
   }
 </style>
 </head>
 <body>
 
-  <header class="container">
-    <div class="hero">
-      <div class="hero-inner">
-        <img src="https://i.postimg.cc/hj5wwBg5/real-logo.jpg"
-             alt="Gray Surgical and Physiotherapy Equipments Logo"
-             class="brand-logo"
-             width="220"
-             height="220">
-        <div class="brand">
-          <h1>Gray Surgical and Physiotherapy Equipments</h1>
-          <p>Premium surgical instruments, physiotherapy devices, rehabilitation tools, and medical supplies for hospitals, clinics, therapists, and home care across Nigeria.</p>
-          <div class="nav-wrap">
-            <nav aria-label="Main navigation">
-              <a href="#about">About</a>
-              <a href="#products">Products</a>
-              <a href="#services">Services</a>
-              <a href="#contact">Contact</a>
-            </nav>
-          </div>
+  <div class="statusbar">
+    <div class="container statusbar-inner">
+      <span><span class="pulse-dot" aria-hidden="true"></span>SYSTEM ONLINE — SUPPLY NETWORK ACTIVE</span>
+      <span>GRAY SURGICAL &amp; PHYSIOTHERAPY · NIGERIA</span>
+    </div>
+  </div>
+
+  <header class="hero-header">
+    <div class="container">
+      <div class="brand-row">
+        <img src="https://i.postimg.cc/hj5wwBg5/real-logo.jpg" alt="Gray Surgical and Physiotherapy Equipments Logo" class="brand-logo" width="78" height="78">
+        <div>
+          <h1 class="brand-name">Gray Surgical and Physiotherapy Equipments</h1>
+          <p class="brand-sub">Next-gen supply for hospitals, clinics &amp; rehab care</p>
         </div>
       </div>
+      <nav class="tabs" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <main class="container">
+
+    <section class="hero-statement" aria-label="Introduction">
+      <div class="scanframe hero-panel">
+        <div class="hero-topline">
+          <span>MODULE // SUPPLY-INTRO</span>
+          <span>STATUS // OPERATIONAL</span>
+        </div>
+        <div class="hero-body">
+          <div>
+            <h2>Equipment your clinic can <span class="glow">depend on</span>, delivered across Nigeria.</h2>
+            <p class="lede">From lumbar corsets to ultrasound therapy units, we stock the instruments and rehabilitation tools that hospitals, clinics, therapists and home-care providers use every day — sourced for durability, priced fairly, and backed by real support.</p>
+            <div class="cta-row">
+              <a class="btn btn-solid" href="#products">View the catalog</a>
+              <a class="btn btn-outline" href="https://wa.me/2349054247463" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div class="ecg-wrap" aria-hidden="true">
+            <svg viewBox="0 0 600 90" preserveAspectRatio="none">
+              <g class="ecg-track">
+                <path class="ecg-line" d="M0,45 L60,45 L75,45 L85,20 L95,70 L105,10 L115,45 L130,45 L200,45 L215,45 L225,20 L235,70 L245,10 L255,45 L270,45 L300,45 L300,45 L360,45 L375,45 L385,20 L395,70 L405,10 L415,45 L430,45 L500,45 L515,45 L525,20 L535,70 L545,10 L555,45 L570,45 L600,45"/>
+                <path class="ecg-line" d="M600,45 L660,45 L675,45 L685,20 L695,70 L705,10 L715,45 L730,45 L800,45 L815,45 L825,20 L835,70 L845,10 L855,45 L870,45 L900,45 L900,45 L960,45 L975,45 L985,20 L995,70 L1005,10 L1015,45 L1030,45 L1100,45 L1115,45 L1125,20 L1135,70 L1145,10 L1155,45 L1170,45 L1200,45"/>
+              </g>
+            </svg>
+            <div class="ecg-caption"><span>SUPPLY VITALS</span><b>STABLE</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
-      <h2>About</h2>
+      <div class="section-head"><span class="tag">01</span><h2>About</h2><span class="rule"></span></div>
       <div class="intro-grid">
-        <div class="info-card">
+        <div class="scanframe info-card">
+          <span class="k">Reliability</span>
           <strong>Trusted supplier</strong>
           <p>We provide reliable medical and rehabilitation products built for performance, comfort, and long-term use.</p>
         </div>
-        <div class="info-card">
+        <div class="scanframe info-card">
+          <span class="k">Standards</span>
           <strong>Quality focused</strong>
           <p>Our products are selected to support safer treatment, faster recovery, and better patient care.</p>
         </div>
-        <div class="info-card">
+        <div class="scanframe info-card">
+          <span class="k">Reach</span>
           <strong>Healthcare support</strong>
           <p>We serve hospitals, clinics, therapists, caregivers, and individuals with professional-grade equipment.</p>
         </div>
@@ -392,186 +660,264 @@
     </section>
 
     <section id="products">
-      <h2>Products</h2>
+      <div class="section-head"><span class="tag">02</span><h2>Products</h2><span class="rule"></span></div>
       <div class="product-grid">
-        <figure>
-          <img src="https://i.postimg.cc/B6K8Z8CH/GRAY-SURGICAL-AND-PHYSIOTHRAPHY-EQUIPMENTS-3.jpg" alt="Durable lumbar corset for back support" loading="lazy">
-          <figcaption>
+
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 01</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/B6K8Z8CH/GRAY-SURGICAL-AND-PHYSIOTHRAPHY-EQUIPMENTS-3.jpg" alt="Durable lumbar corset for back support" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Lumbar Corset</b>
             <p>A durable and comfortable corset designed for lumbar support.</p>
-            <span class="price">Price: ₦26,000 (≈ $19 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦26,000 <small>≈ $19</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/tg55pM2K/GRAY-SURGICAL-AND-PHYSIOTHRAPHY-EQUIPMENTS-2.jpg" alt="Premium knee brace for recovery" loading="lazy">
-          <figcaption>
-            <b>Knee Brace – Premium</b>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 02</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/tg55pM2K/GRAY-SURGICAL-AND-PHYSIOTHRAPHY-EQUIPMENTS-2.jpg" alt="Premium knee brace for recovery" loading="lazy">
+          </div>
+          <div class="ticket-copy">
+            <b>Knee Brace — Premium</b>
             <p>A high-quality knee brace for injury prevention and recovery.</p>
-            <span class="price">Price: ₦520,000 (≈ $400 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦520,000 <small>≈ $400</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/Px6bgv2Z/GRAY-SURGICAL-AND-PHYSIOTHRAPHY-EQUIPMENTS-1.jpg" alt="Standard knee brace for rehabilitation" loading="lazy">
-          <figcaption>
-            <b>Knee Brace – Standard</b>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 03</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/Px6bgv2Z/GRAY-SURGICAL-AND-PHYSIOTHRAPHY-EQUIPMENTS-1.jpg" alt="Standard knee brace for rehabilitation" loading="lazy">
+          </div>
+          <div class="ticket-copy">
+            <b>Knee Brace — Standard</b>
             <p>A reliable knee brace for injury prevention and recovery.</p>
-            <span class="price">Price: ₦170,000 (≈ $130 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦170,000 <small>≈ $130</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/Pq230jTx/new-1.jpg" alt="Massaging gum" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 04</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/Pq230jTx/new-1.jpg" alt="Massaging gum" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Massaging Gum</b>
             <p>A therapeutic massaging gum for muscle relaxation and pain relief.</p>
-            <span class="price">Price: ₦30,000 (≈ $23 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦30,000 <small>≈ $23</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/SQ7rP4rZ/new-2.jpg" alt="Sonic stim ultrasound tablet top unit" loading="lazy">
-          <figcaption>
-            <b>Sonic Stim Ultrasound Tablet Top Unit</b>
-            <p>A versatile ultrasound therapy device for physiotherapy treatments.</p>
-            <span class="price">Price: ₦1,600,000 (≈ $1,230 USD)</span>
-          </figcaption>
-        </figure>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 05</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/SQ7rP4rZ/new-2.jpg" alt="Sonic stim ultrasound tablet top unit" loading="lazy">
+          </div>
+          <div class="ticket-copy">
+            <b>Sonic Stim Ultrasound Unit</b>
+            <p>A versatile tablet-top ultrasound therapy device for physiotherapy treatments.</p>
+            <span class="price">₦1,600,000 <small>≈ $1,230</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/90KNJ5yV/new-3.jpg" alt="Thread mill" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 06</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/90KNJ5yV/new-3.jpg" alt="Thread mill" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Thread Mill</b>
             <p>A precision instrument for surgical procedures.</p>
-            <span class="price">Price: ₦500,000 (≈ $385 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦500,000 <small>≈ $385</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/nLm7D8hJ/new-4.jpg" alt="Quadriceps and Hamstring Exerciser" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 07</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/nLm7D8hJ/new-4.jpg" alt="Quadriceps and Hamstring Exerciser" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Quadriceps Bench</b>
             <p>A targeted exercise device for strengthening leg muscles.</p>
-            <span class="price">Price: ₦600,000 (≈ $460 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦600,000 <small>≈ $460</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/hG3d6SZL/new-6.jpg" alt="CONTEC Electronic Sphygmomanometer" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 08</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/hG3d6SZL/new-6.jpg" alt="CONTEC Electronic Sphygmomanometer" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>CONTEC Electronic Sphygmomanometer</b>
             <p>A reliable blood pressure monitor for accurate readings.</p>
-            <span class="price">Price: ₦45,000 (≈ $35 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦45,000 <small>≈ $35</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/630DtmRR/new-7.jpg" alt="Kinesio Tex Gold Tape (Red)" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 09</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/630DtmRR/new-7.jpg" alt="Kinesio Tex Gold Tape (Red)" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Kinesio Tex Gold Tape (Red)</b>
             <p>A high-quality kinesiology tape for muscle support and pain relief.</p>
-            <span class="price">Price: ₦8,500 (≈ $6.50 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦8,500 <small>≈ $6.50</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/T2BZGgW6/new-8.jpg" alt="TENS white wire" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 10</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/T2BZGgW6/new-8.jpg" alt="TENS white wire" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>TENS White Wire</b>
             <p>A reliable TENS unit for pain management and muscle stimulation.</p>
-            <span class="price">Price: ₦6,000 (≈ $4.60 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦6,000 <small>≈ $4.60</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/QxXcFn7z/new-9.jpg" alt="CATHAY Self-Adhering Electrodes" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 11</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/QxXcFn7z/new-9.jpg" alt="CATHAY Self-Adhering Electrodes" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>CATHAY Self-Adhering Electrodes</b>
             <p>High-quality electrodes for effective TENS therapy.</p>
-            <span class="price">Price: ₦3,000 (≈ $2.30 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦3,000 <small>≈ $2.30</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/MGtC8L19/new-11.jpg" alt="Mosquito net" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 12</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/MGtC8L19/new-11.jpg" alt="Mosquito net" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Mosquito Net</b>
             <p>A protective mosquito net for safe and comfortable sleep.</p>
-            <span class="price">Price: ₦65,000 (≈ $50 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦65,000 <small>≈ $50</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/ZKc2NgMJ/new-12.jpg" alt="Wheelchair" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 13</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/ZKc2NgMJ/new-12.jpg" alt="Wheelchair" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Wheelchair</b>
             <p>A durable and comfortable wheelchair for mobility assistance.</p>
-            <span class="price">Price: ₦120,000 (≈ $92 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦120,000 <small>≈ $92</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/xC23tjXt/new-13.jpg" alt="Finger pulse oximeter" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 14</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/xC23tjXt/new-13.jpg" alt="Finger pulse oximeter" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Finger Pulse Oximeter</b>
             <p>A compact device for measuring blood oxygen levels and pulse rate.</p>
-            <span class="price">Price: ₦10,000 (≈ $7.70 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦10,000 <small>≈ $7.70</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/vm3ZS3Tg/new-14.jpg" alt="Electronic Blood Pressure Monitor" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 15</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/vm3ZS3Tg/new-14.jpg" alt="Electronic Blood Pressure Monitor" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Electronic Blood Pressure Monitor</b>
             <p>A reliable device for accurate blood pressure measurements.</p>
-            <span class="price">Price: ₦17,000 (≈ $13 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦17,000 <small>≈ $13</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/K8YTckT2/new-15.jpg" alt="Inflatable neck traction device" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 16</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/K8YTckT2/new-15.jpg" alt="Inflatable neck traction device" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Inflatable Neck Traction Device</b>
             <p>A comfortable and effective device for neck traction therapy.</p>
-            <span class="price">Price: ₦30,000 (≈ $23 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦30,000 <small>≈ $23</small></span>
+          </div>
+        </div>
 
-        <figure>
-          <img src="https://i.postimg.cc/ZR1knd0K/new-16.jpg" alt="Arm and Leg Pedal Exerciser" loading="lazy">
-          <figcaption>
+        <div class="scanframe ticket">
+          <div class="ticket-media">
+            <span class="id-chip">UNIT · 17</span>
+            <span class="status">● IN STOCK</span>
+            <img src="https://i.postimg.cc/ZR1knd0K/new-16.jpg" alt="Arm and Leg Pedal Exerciser" loading="lazy">
+          </div>
+          <div class="ticket-copy">
             <b>Arm and Leg Pedal Exerciser</b>
             <p>A versatile exerciser for upper and lower body workouts.</p>
-            <span class="price">Price: ₦65,000 (≈ $50 USD)</span>
-          </figcaption>
-        </figure>
+            <span class="price">₦65,000 <small>≈ $50</small></span>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section id="services">
-      <h2>Services</h2>
-      <p>We offer equipment installation, maintenance, and training for healthcare professionals. Our support is designed to help you get the best from every product you purchase.</p>
+      <div class="section-head"><span class="tag">03</span><h2>Services</h2><span class="rule"></span></div>
+      <div class="scanframe services-body">
+        <p>Buying the equipment is only half the job. We help you get real, lasting use out of it — from the day it arrives at your facility onward.</p>
+        <ul class="services-list">
+          <li>Equipment installation at your facility</li>
+          <li>Routine maintenance and servicing</li>
+          <li>Hands-on training for clinical staff</li>
+          <li>Ongoing phone and WhatsApp support</li>
+        </ul>
+      </div>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-box">
-        <p>For inquiries or to learn more about our products and services, reach us through any of the options below.</p>
+      <div class="section-head"><span class="tag">04</span><h2>Contact</h2><span class="rule"></span></div>
+      <div class="scanframe contact-box">
+        <p>For inquiries, pricing, or bulk orders, reach us through any of the channels below — we typically respond fastest on WhatsApp.</p>
         <div class="contact-links">
-          <a href="tel:+2349054247463">📞 Call us: +2349054247463</a>
-          <a href="mailto:wichukwuebuka96@gmail.com">✉️ Email: wichukwuebuka96@gmail.com</a>
-          <a href="https://wa.me/2349054247463" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+          <a href="tel:+2349054247463"><span class="label">Call</span>+234 905 424 7463</a>
+          <a href="mailto:wichukwuebuka96@gmail.com"><span class="label">Email</span>wichukwuebuka96@gmail.com</a>
+          <a href="https://wa.me/2349054247463" target="_blank" rel="noopener noreferrer"><span class="label">WhatsApp</span>Chat with us</a>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
+    <hr>
     <p>&copy; 2026 Gray Surgical and Physiotherapy Equipments. All rights reserved.</p>
-                     <hr style="color: green;" />
-
-    <p style="color: blue;>BUILT AND DESIGNED BY :<a href="https://shadrach1-cpu.github.io/shadrach-portfolio/">LORD SHAD DE GREAT</a></p>
+    <p>Built and designed by <a href="https://shadrach1-cpu.github.io/shadrach-portfolio/">Lord Shad De Great</a></p>
   </footer>
 
 </body>
